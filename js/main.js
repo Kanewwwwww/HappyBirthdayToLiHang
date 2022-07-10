@@ -40,7 +40,6 @@ $(function () {
 
         
         var  sec =  Math.floor(Math.random() * 2000);
-        alert(sec)
         cardloading(cardPicker, sec);
 
       }
