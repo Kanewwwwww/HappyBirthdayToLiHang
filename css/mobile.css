@@ -1,0 +1,56 @@
+
+
+  @media (max-width: 1360px){
+ 
+    .container {
+      width: 100%;
+      padding: unset;
+      margin: 0 auto;
+    }
+  }
+
+  
+  @media (max-width: 600px){
+    html,body{
+        overflow-x:hidden;
+        height: 100%;
+    }
+
+    .container .card_block .card {
+        background-image: url(../images/linPayCard.png);
+        width: 330px;
+        height: 200px;
+        background-repeat: round;
+        background-size: contain;
+        margin: 0 auto;
+    }
+
+    .container .block .item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: unset;
+        padding-right: unset;
+        height:unset;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .container .card_block .money {
+        font-size: 30px;
+        position: relative;
+        top: -180px;
+        left: 50px;
+        font-weight: 600;
+        display: inline;
+    }
+    
+
+    .container .card_block .account {
+        position: relative;
+        top: -180px;
+        left: 210px;
+        font-weight: 600;
+      }
+  }
