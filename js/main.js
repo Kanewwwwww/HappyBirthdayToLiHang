@@ -6,6 +6,7 @@ $(function () {
         { url: "images/迦康.JPG" },
         { url: "images/煉英.JPG" },
         { url: "images/儀君.JPG" },
+        { url: "images/思庭.JPG" },
         { url: "images/美玲.JPG" }
       ];
     // var _picture = [
