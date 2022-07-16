@@ -1,26 +1,34 @@
 $(function () {
     var _picture = [
-        { url: "images/妍狄.JPG" },
-        { url: "images/宜君.JPG" },
-        { url: "images/美恩.JPG" },
-        { url: "images/迦康.JPG" },
-        { url: "images/煉英.JPG" },
-        { url: "images/儀君.JPG" },
-        { url: "images/思庭.JPG" },
-        { url: "images/佩青.JPG" },
-        { url: "images/美玲.JPG" }
+        { url: 'images/妍狄.JPG',name:'妍狄'},
+        { url: 'images/宜君.JPG',name:'宜君'},
+        { url: 'images/美恩.JPG',name:'美恩'},
+        { url: 'images/迦康.JPG',name:'迦康'},
+        { url: 'images/煉英.JPG',name:'煉英'},
+        { url: 'images/儀君.JPG',name:'儀君'},
+        { url: 'images/思庭.JPG',name:'思庭'},
+        { url: 'images/佩青.JPG',name:'佩青'},
+        { url: 'images/美玲.JPG',name:'美玲'},
+        { url: 'images/承恩.JPG',name:'承恩'},
+        { url: 'images/文楷-果實.JPG',name:'文楷-果實'},
+        { url: 'images/文楷-河岸.JPG',name:'文楷-河岸'},
+        { url: 'images/文楷-星空.JPG',name:'文楷-星空'},
+        { url: 'images/念佳-小天使.JPG',name:'念佳-小天使'},
+        { url: 'images/念佳-小星星.JPG',name:'念佳-小星星'},
+        { url: 'images/念佳-小燈籠.JPG',name:'念佳-小燈籠'}
       ];
+    var _oldPictureCount = 16 ;
     // var _picture = [
     //     { url: "https://live.staticflickr.com/65535/52123901301_11fe3233a0_c.jpg" },
     //     { url: "https://live.staticflickr.com/65535/52123901291_ff3304223c_b.jpg" }
     //   ];
       var _draw = [];
       var cardloading = function (fun, time) {
-        $(".card .image .status .type").html("抽卡中");
-        $(".card .image .status .dot").show();
+        $(".card .image .status ").show();
+        $(".card .image .info ").hide();
+        
         setTimeout(() => {
-            $(".card .image .status .type").html("");
-            $(".card .image .status .dot").hide();;
+            $(".card .image .status ").hide();
           fun();
         }, time);
       };
@@ -29,8 +37,9 @@ $(function () {
     init();
     
     function init() {
+       _oldPictureCount = _picture.length ;
         eventBind();
-        $(".card_count").text("剩下" + _picture.length + "張卡");
+        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
     }
 
     function drawCard() {
@@ -52,7 +61,7 @@ $(function () {
         $("img").attr("src", card.url);
         _draw.push(card);
         _picture.splice(cardNum, 1);
-        $(".card_count").text("剩下" + _picture.length + "張卡");
+        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
         $(".already_card").text("以抽" + _draw.length + "張卡");
       }
       
@@ -62,8 +71,8 @@ $(function () {
         }
         _draw.forEach((e) => _picture.push(e));
         _draw = [];
-        $(".card_count").text("剩下" + _picture.length + "張卡");
-        $(".already_card").text("已抽" + _draw.length + "張卡");
+        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
+        $(".already_card").text("以抽" + _draw.length + "張卡");
       }
 
       
@@ -90,8 +99,10 @@ $(function () {
             debugger;
             drawCard();
           });
-          $(" .recover").bind("click", function (e) {
-            recovery();
+          $(" .card_Reflash").bind("click", function (e) {
+            debugger
+            // recovery();
+            location.reload();
           });
     }
 });

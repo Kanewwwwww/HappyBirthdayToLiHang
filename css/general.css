@@ -19,6 +19,19 @@ body {
   overflow: hidden;
 }
 
+.card_Reflash {
+  padding-left: 20px;
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+  /* text-decoration: none; */
+  /* text-transform: uppercase; */
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
 .cards {
   display: flex;
 }
@@ -67,6 +80,19 @@ body {
   /* ★ */
 }
 
+.card.is-loading .image .info {
+  display: inline;
+  position: absolute;
+  height: 400px;
+  top: 190px;
+  left: 50%;
+  transform: translate(-50%, -100px);
+  font-size: x-large;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
 .card.is-loading .image .status {
   display: inline;
   position: absolute;
@@ -76,6 +102,7 @@ body {
   transform: translate(-50%, -25px);
   font-size: xx-large;
   font-weight: 900;
+  display: none;
 }
 
 .card.is-loading .image .status .type{
@@ -92,7 +119,6 @@ body {
   text-decoration: none;
   line-height: 20px;
   opacity: 0;
-  display: none;
   animation: showHideDot 2.5s ease-in-out infinite;
 }
 
@@ -137,12 +163,13 @@ body {
   font-size: 18px;
   letter-spacing: 2px;
   border-radius: 40px;
-  background: linear-gradient(90deg, #0162c8, #55e7fc);
+  background: linear-gradient(90deg, #b546ff, #ff6954);
   overflow: hidden;
 }
 
 .button:nth-of-type(2) {
-  background: linear-gradient(90deg, #b546ff, #ff6954);
+  
+  background: linear-gradient(90deg, #0162c8, #55e7fc);
 }
 
 span {
