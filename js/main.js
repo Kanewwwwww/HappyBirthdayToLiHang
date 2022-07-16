@@ -17,7 +17,7 @@ $(function () {
         { url: 'images/念佳-小星星.JPG',name:'念佳-小星星'},
         { url: 'images/念佳-小燈籠.JPG',name:'念佳-小燈籠'}
       ];
-    var _oldPictureCount = 16 ;
+    var _oldPictureCount = 0;
     // var _picture = [
     //     { url: "https://live.staticflickr.com/65535/52123901301_11fe3233a0_c.jpg" },
     //     { url: "https://live.staticflickr.com/65535/52123901291_ff3304223c_b.jpg" }
@@ -26,9 +26,12 @@ $(function () {
       var cardloading = function (fun, time) {
         $(".card .image .status ").show();
         $(".card .image .info ").hide();
+        $(".card.is-loading .image ").height(400);
         
         setTimeout(() => {
             $(".card .image .status ").hide();
+            $(".card.is-loading .image ").height(0);
+            
           fun();
         }, time);
       };
