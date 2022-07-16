@@ -42,7 +42,7 @@ $(function () {
     function init() {
        _oldPictureCount = _picture.length ;
         eventBind();
-        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
+        $(".card_count").text("剩餘" + _picture.length +"/" + _oldPictureCount + "張卡");
     }
 
     function drawCard() {
@@ -64,7 +64,7 @@ $(function () {
         $("img").attr("src", card.url);
         _draw.push(card);
         _picture.splice(cardNum, 1);
-        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
+        $(".card_count").text("剩餘" + _picture.length +"/" + _oldPictureCount + "張卡");
         $(".already_card").text("以抽" + _draw.length + "張卡");
       }
       
@@ -74,7 +74,7 @@ $(function () {
         }
         _draw.forEach((e) => _picture.push(e));
         _draw = [];
-        $(".card_count").text("已抽" + _picture.length +"/" + _oldPictureCount + "張卡");
+        $(".card_count").text("剩餘" + _picture.length +"/" + _oldPictureCount + "張卡");
         $(".already_card").text("以抽" + _draw.length + "張卡");
       }
 
