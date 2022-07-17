@@ -19,6 +19,12 @@ body {
   overflow: hidden;
 }
 
+.creater {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: none;
+}
+
 .card_Reflash {
   padding-left: 20px;
   position: relative;
@@ -50,7 +56,7 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   z-index: 99px;
-  max-width: 600px;
+  min-width: 600px;
     /* margin: 0 auto; */
     position: relative;
     right: 50%;
